@@ -1,0 +1,22 @@
+<%= form_for(@found_egg) do |f| %>
+  <% if @found_egg.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@found_egg.errors.count, "error") %> prohibited this egg from being saved:</h2>
+
+      <ul>
+      <% @found_egg.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.text_field :name, placeholder: "Enter your full name...", class: "form-control" %>
+  </div>
+
+  </div>
+  <div class="actions">
+    <%= f.submit 'Submit', class: 'btn btn-lg btn-success' %>
+  </div>
+<% end %>
